@@ -18,7 +18,7 @@ The backend is built using FastAPI, providing a lightweight and high-speed API s
 * *Backend & API:* FastAPI, Python, Uvicorn
 * *Deep Learning & Computer Vision:* YOLOv8 (Ultralytics), PyTorch, Pillow, OpenCV
 ## System Flowchart
-mermaid
+```mermaid
 graph TD
     A[User / Frontend Interface] -->|Uploads Leaf Image| B(Next.js Client)
     B -->|Multipart Form-Data Request| C{FastAPI Backend}
@@ -28,26 +28,27 @@ graph TD
     F -->|Constructs JSON Response| C
     C -->|Returns API Response| B
     B -->|Renders UI & Bounding Boxes| A
+```
 
 ## Setup & Installation
 ### 1. Backend Setup
-bash
+```bash
 cd backend
-
-bash
+```
+```bash
 python -m venv venv
-
-bash
+```
+```bash
 venv\Scripts\activate
-
-bash
+```
+```bash
 pip install -r requirements.txt
 uvicorn main:app --reload --port 8000
-
+```
 ### 2. Frontend Setup
-bash
+```bash
 cd frontend
 npm install
 npm run dev
-
+```
 The frontend will be available at http://localhost:3000 and the API documentation at http://localhost:8000/docs.
